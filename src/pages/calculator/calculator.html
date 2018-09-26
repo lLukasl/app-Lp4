@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- bind por interpolação -->
+  <h2>Welcome {{ nome_usuario }}!</h2>
+
+  <p>Digite dois numeros para calcular</p>
+
+  <ion-list inset>
+
+    <ion-item>
+      <ion-label>Numero 1</ion-label>
+      <ion-input type="number" [(ngModel)]="numero_1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Numero 2</ion-label>
+      <ion-input type="number" [(ngModel)]="numero_2"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <p>Você vai calcular o numero {{ numero_1 }} com o numero {{ numero_2 }}</p>
+
+  <button ion-button (click)="somarDoisNumeros()" color="dark" round><ion-icon name="add"></ion-icon></button>
+  <button ion-button (click)="subtrair()" color="danger" round><ion-icon name="remove"></ion-icon></button>
+  <button ion-button (click)="multiplicar()" color="success" round><ion-icon name="close"></ion-icon></button>
+  <button ion-button (click)="dividir()" color="secondary" round><span><b>/</b></span></button>
+
+  <h1>Resultado: <span class="red">{{ resultado }}</span></h1>
+
+</ion-content>
